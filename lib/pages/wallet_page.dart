@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:track_fund/components/custom_line_chart.dart';
 import 'package:track_fund/components/custom_stats.dart';
+import 'package:track_fund/components/custom_tab_bar.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
@@ -8,11 +10,6 @@ class WalletPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.menu),
-        title: Text('Overview', style: TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -39,6 +36,14 @@ class WalletPage extends StatelessWidget {
 
             SizedBox(height: screenHeight * 0.03),
             Text('Statistics', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            SizedBox(height: screenHeight * 0.03),
+            SizedBox(
+              height: screenHeight * 0.3, // Or any fixed height you want
+              child: MyGroupedBarChart(),
+            ),
+            SizedBox(height: screenHeight * 0.03),
+            CustomTabBar(),
+            SizedBox(height: screenHeight * 0.05),
           ],
         ),
       ),

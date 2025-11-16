@@ -25,7 +25,7 @@ class CustomStats extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(icon, color: iconColor),
-                Text('\$8,500', style: TextStyle(fontSize: 20)),
+                Text(' \$8,500', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ],
             ),
           ],

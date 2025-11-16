@@ -11,7 +11,7 @@ class CustomCard extends StatelessWidget {
       height: screenHeight * 0.2,
       width: screenWidth * 1,
       decoration: BoxDecoration(
-        color: Color(0xFF408782),
+        color: Colors.deepPurpleAccent,
         borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
       child: Padding(
@@ -23,7 +23,10 @@ class CustomCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Total Balance:', style: TextStyle(fontSize: 18, color: Colors.white)),
+                Text(
+                  'Total Balance:',
+                  style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                ),
                 Icon(Icons.more_horiz, color: Colors.white),
               ],
             ),
@@ -35,16 +38,28 @@ class CustomCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Income:', style: TextStyle(color: Colors.white, fontSize: 18)),
-                Text('Expenses:', style: TextStyle(color: Colors.white, fontSize: 18)),
+                Text(
+                  'Income:',
+                  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Expenses:',
+                  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                ),
               ],
             ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('\$2,000', style: TextStyle(color: Colors.white, fontSize: 20)),
-                Text('\$1,500', style: TextStyle(color: Colors.white, fontSize: 20)),
+                Text(
+                  '\$2,000',
+                  style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  '\$1,500',
+                  style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                ),
               ],
             ),
           ],

@@ -4,11 +4,13 @@ class TransactionCard extends StatelessWidget {
   final String transacName;
   final String time;
   final String amount;
+  final Color? color;
   const TransactionCard({
     super.key,
     required this.transacName,
     required this.time,
     required this.amount,
+    required this.color,
   });
 
   @override
@@ -43,7 +45,7 @@ class TransactionCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text('\$$amount', style: TextStyle(color: Colors.red, fontSize: 20)),
+                Text(amount, style: TextStyle(color: color, fontSize: 20)),
               ],
             ),
           ],

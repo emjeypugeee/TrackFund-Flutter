@@ -10,14 +10,6 @@ class HomePage extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.menu),
-        title: Text(
-          'My Wallet',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -39,14 +31,54 @@ class HomePage extends StatelessWidget {
               ),
               Column(
                 children: [
-                  TransactionCard(transacName: 'Money Transfer', amount: '500', time: '12:30AM'),
-                  TransactionCard(transacName: 'Paypal', amount: '600', time: '1:00PM'),
-                  TransactionCard(transacName: 'Paypal', amount: '600', time: '1:00PM'),
-                  TransactionCard(transacName: 'Paypal', amount: '600', time: '1:00PM'),
-                  TransactionCard(transacName: 'Paypal', amount: '600', time: '1:00PM'),
-                  TransactionCard(transacName: 'Paypal', amount: '600', time: '1:00PM'),
-                  TransactionCard(transacName: 'Paypal', amount: '600', time: '1:00PM'),
-                  TransactionCard(transacName: 'Paypal', amount: '600', time: '1:00PM'),
+                  TransactionCard(
+                    transacName: 'Money Transfer',
+                    amount: '-\$500',
+                    time: '12:30AM',
+                    color: Colors.red,
+                  ),
+                  TransactionCard(
+                    transacName: 'Paypal',
+                    amount: '-\$500',
+                    time: '1:00PM',
+                    color: Colors.red,
+                  ),
+                  TransactionCard(
+                    transacName: 'Paypal',
+                    amount: '600',
+                    time: '1:00PM',
+                    color: Colors.red,
+                  ),
+                  TransactionCard(
+                    transacName: 'Paypal',
+                    amount: '-\$500',
+                    time: '1:00PM',
+                    color: Colors.red,
+                  ),
+                  TransactionCard(
+                    transacName: 'Paypal',
+                    amount: '600',
+                    time: '1:00PM',
+                    color: Colors.green,
+                  ),
+                  TransactionCard(
+                    transacName: 'Paypal',
+                    amount: '600',
+                    time: '1:00PM',
+                    color: Colors.green,
+                  ),
+                  TransactionCard(
+                    transacName: 'Paypal',
+                    amount: '-\$500',
+                    time: '1:00PM',
+                    color: Colors.green,
+                  ),
+                  TransactionCard(
+                    transacName: 'Paypal',
+                    amount: '+\$600',
+                    time: '1:00PM',
+                    color: Colors.green,
+                  ),
                 ],
               ),
             ],

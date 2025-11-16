@@ -9,17 +9,31 @@ class CustomBottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     // 1. Get the currently selected index
     final int currentIndex = _calculateSelectedIndex(context);
+    List<String> titles = ['Home', 'Overview', 'Wallet', 'Profile'];
 
     // 2. Define colors for active/inactive tabs
-    final Color selectedColor = Color(0xFF408782);
+    final Color selectedColor = Colors.deepPurpleAccent;
     final Color unselectedColor = Colors.grey;
 
+    //
+    double iconSize = 25;
+
     return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(Icons.menu, size: iconSize),
+            (Text(titles[currentIndex], style: TextStyle(fontWeight: FontWeight.bold))),
+            Icon(Icons.notifications, size: iconSize),
+          ],
+        ),
+      ),
       body: child,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       // 3. Wire up the FAB (or leave for a separate action)
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF408782),
+        backgroundColor: Colors.deepPurpleAccent,
         shape: CircleBorder(),
         onPressed: () {
           // This button is separate from the shell routes.
@@ -42,12 +56,14 @@ class CustomBottomNav extends StatelessWidget {
               color: currentIndex == 0 ? selectedColor : unselectedColor,
               // 6. Call navigation helper on press
               onPressed: () => _onItemTapped(0, context),
+              iconSize: iconSize,
             ),
             // --- WALLET ---
             IconButton(
               icon: const Icon(Icons.analytics_outlined),
               color: currentIndex == 1 ? selectedColor : unselectedColor,
               onPressed: () => _onItemTapped(1, context),
+              iconSize: iconSize,
             ),
             // --- PAYMENT ---
             // Note: Your original code had 4 icons. I've matched them
@@ -56,12 +72,14 @@ class CustomBottomNav extends StatelessWidget {
               icon: const Icon(Icons.wallet), // Your 'wallet' icon
               color: currentIndex == 2 ? selectedColor : unselectedColor,
               onPressed: () => _onItemTapped(2, context),
+              iconSize: iconSize,
             ),
             // --- PROFILE ---
             IconButton(
               icon: const Icon(Icons.person),
               color: currentIndex == 3 ? selectedColor : unselectedColor,
               onPressed: () => _onItemTapped(3, context),
+              iconSize: iconSize,
             ),
           ],
         ),
