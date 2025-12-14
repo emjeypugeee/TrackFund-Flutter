@@ -7,12 +7,11 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return GestureDetector(
+      onTap: onTap,
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          color: Colors.deepPurpleAccent,
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: colors.primary),
         padding: EdgeInsets.all(15),
         child: Center(child: Text(text, style: TextStyle(color: Colors.white, fontSize: 16))),
       ),

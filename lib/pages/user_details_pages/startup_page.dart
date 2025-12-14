@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:track_fund/components/custom_button.dart';
+import 'package:track_fund/components/main_pages_widgets/home_page/theme_toggle_button.dart';
+import 'package:track_fund/router/app_router.dart';
 
 class StartupPage extends StatelessWidget {
   const StartupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Row(mainAxisAlignment: MainAxisAlignment.end, children: [ThemeToggleButton()]),
+      ),
       body: Padding(
-        // Added some vertical padding for better spacing from screen edges
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
         child: Column(
           children: [
@@ -18,18 +22,25 @@ class StartupPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Track-Fund',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50,
-                    ),
+                  SizedBox(
+                    height: 150,
+                    width: 200,
+                    child: Image.asset('assets/images/track_fund_logo.png'),
                   ),
                   Text(
-                    'You\'re one stop solution on your expenses tracker problems',
+                    'Save your money expenses with Track-Fund',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey, fontSize: 16),
+                    style: TextStyle(
+                      color: colors.onSurface,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Get Money! Track Money! Save Money! \nYou\'re one stop solution on your expenses tracker problems.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: colors.onSurface.withValues(alpha: 0.6), fontSize: 16),
                   ),
                 ],
               ),
@@ -39,7 +50,7 @@ class StartupPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: SizedBox(
                 width: double.infinity,
-                child: CustomButton(text: 'Get Started!', onTap: () => context.go('/home')),
+                child: CustomButton(text: 'Get Started!', onTap: () => context.go(AppRouter.login)),
               ),
             ),
           ],
