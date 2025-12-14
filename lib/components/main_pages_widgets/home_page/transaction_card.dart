@@ -5,12 +5,14 @@ class TransactionCard extends StatelessWidget {
   final String time;
   final String amount;
   final Color? color;
+  final Icon icon;
   const TransactionCard({
     super.key,
     required this.transacName,
     required this.time,
     required this.amount,
     required this.color,
+    required this.icon,
   });
 
   @override
@@ -29,7 +31,7 @@ class TransactionCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    CircleAvatar(radius: 30, child: Icon(Icons.person)),
+                    CircleAvatar(radius: 30, child: icon),
                     Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
